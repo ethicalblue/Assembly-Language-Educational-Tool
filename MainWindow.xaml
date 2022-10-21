@@ -1,0 +1,88 @@
+﻿<Window x:Class="Keystone_Asm_GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Keystone_Asm_GUI"
+        mc:Ignorable="d"
+        Title="Assembly Language Educational Tool // ethical.blue Magazine" Height="597" Width="800" MinHeight="597" MinWidth="800"
+        Background="Black" Foreground="WhiteSmoke" FontSize="17" WindowStartupLocation="CenterScreen">
+    <Grid Margin="11">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="45" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" MinHeight="31" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Viewbox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Stretch="UniformToFill" VerticalAlignment="Top">
+            <Image Source="/Images/logo.png" Stretch="UniformToFill" />
+        </Viewbox>
+        
+        <TextBlock Grid.Row="1" Grid.Column="0" Margin="4" Grid.ColumnSpan="2" TextWrapping="Wrap">
+                Source Code
+        </TextBlock>
+
+        <TextBox x:Name="TextBoxSourceCode" Foreground="DodgerBlue" FontFamily="Cascadia Code" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" AcceptsReturn="True" VerticalContentAlignment="Top" MinLines="5">
+            
+        </TextBox>
+
+        <Button x:Name="ButtonAssemble" MinHeight="54" MinWidth="184" MaxWidth="204" Grid.Row="3" Grid.Column="0" Click="ButtonAssemble_Click">
+            &#128736;&#65039; Assemble
+        </Button>
+
+        <ComboBox x:Name="ComboBoxArch" FontSize="18" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center">
+            <ComboBoxItem IsSelected="True">x64:       X86 64bit, Intel syntax</ComboBoxItem>
+            <ComboBoxItem>x32:       X86 32bit, Intel syntax</ComboBoxItem>
+            <ComboBoxItem>x16:       X86 16bit, Intel syntax</ComboBoxItem>
+            <ComboBoxItem>x64att:    X86 64bit, AT&amp;T syntax</ComboBoxItem>
+            <ComboBoxItem>x32att:    X86 32bit, AT&amp;T syntax</ComboBoxItem>
+            <ComboBoxItem>x16att:    X86 16bit, AT&amp;T syntax</ComboBoxItem>
+            <ComboBoxItem>x64nasm:   X86 64bit, NASM syntax</ComboBoxItem>
+            <ComboBoxItem>x32nasm:   X86 32bit, NASM syntax</ComboBoxItem>
+            <ComboBoxItem>x16nasm:   X86 16bit, NASM syntax</ComboBoxItem>
+            <ComboBoxItem>arm:       ARM - little endian</ComboBoxItem>
+            <ComboBoxItem>armbe:     ARM - big endian</ComboBoxItem>
+            <ComboBoxItem>thumb:     Thumb - little endian</ComboBoxItem>
+            <ComboBoxItem>thumbbe:   Thumb - big endian</ComboBoxItem>
+            <ComboBoxItem>armv8:     ARM V8 - little endian</ComboBoxItem>
+            <ComboBoxItem>armv8be:   ARM V8 - big endian</ComboBoxItem>
+            <ComboBoxItem>thumbv8:   Thumb V8 - little endian</ComboBoxItem>
+            <ComboBoxItem>thumbv8be: Thumb V8 - big endian</ComboBoxItem>
+            <ComboBoxItem>arm64:     AArch64</ComboBoxItem>
+            <ComboBoxItem>hexagon:   Hexagon</ComboBoxItem>
+            <ComboBoxItem>mips:      Mips - little endian</ComboBoxItem>
+            <ComboBoxItem>mipsbe:    Mips - big endian</ComboBoxItem>
+            <ComboBoxItem>mips64:    Mips64 - little endian</ComboBoxItem>
+            <ComboBoxItem>mips64be:  Mips64 - big endian</ComboBoxItem>
+            <ComboBoxItem>ppc32be:   PowerPC32 - big endian</ComboBoxItem>
+            <ComboBoxItem>ppc64:     PowerPC64 - little endian</ComboBoxItem>
+            <ComboBoxItem>ppc64be:   PowerPC64 - big endian</ComboBoxItem>
+            <ComboBoxItem>sparc:     Sparc - little endian</ComboBoxItem>
+            <ComboBoxItem>sparcbe:   Sparc - big endian</ComboBoxItem>
+            <ComboBoxItem>sparc64be: Sparc64 - big endian</ComboBoxItem>
+            <ComboBoxItem>systemz:   SystemZ (S390x)</ComboBoxItem>
+            <ComboBoxItem>evm:       Ethereum Virtual Machine</ComboBoxItem>
+        </ComboBox>
+        
+        <TextBlock Grid.Row="4" Grid.Column="0" Margin="4" Grid.ColumnSpan="2" TextWrapping="Wrap">
+                Machine Code
+        </TextBlock>
+
+        <TextBox x:Name="TextBoxMachineCode" IsReadOnly="True" Foreground="DodgerBlue" FontFamily="Cascadia Code" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" AcceptsReturn="True" VerticalContentAlignment="Top" MinLines="5"></TextBox>
+
+        <TextBlock VerticalAlignment="Center" Foreground="Silver" TextAlignment="Left" Grid.Row="6" Grid.Column="0">
+            Powered by Keystone - The Ultimate Assembler
+        </TextBlock>
+
+        <TextBlock x:Name="TextBytesCount" Foreground="White" TextAlignment="Right" FontSize="24" Grid.Row="6" Grid.Column="1">0 bytes</TextBlock>
+        
+    </Grid>
+</Window>
