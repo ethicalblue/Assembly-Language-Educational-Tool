@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Keystone_Asm_GUI"
         mc:Ignorable="d"
-        Title="Assembly Language Educational Tool // ethical.blue Magazine" Height="597" Width="800" MinHeight="597" MinWidth="800"
+        Title="Assembly Language Educational Tool // ethical.blue Magazine" Height="700" Width="800" MinHeight="584" MinWidth="800"
         Background="Black" Foreground="WhiteSmoke" FontSize="17" WindowStartupLocation="CenterScreen">
     <Grid Margin="11">
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" MinHeight="45" />
+            <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
@@ -23,14 +23,14 @@
         </Grid.ColumnDefinitions>
 
         <Viewbox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Stretch="UniformToFill" VerticalAlignment="Top">
-            <Image Source="/Images/logo.png" Stretch="UniformToFill" />
+            <Image Source="/Images/logo.png" Stretch="UniformToFill" MaxHeight="45" />
         </Viewbox>
         
         <TextBlock Grid.Row="1" Grid.Column="0" Margin="4" Grid.ColumnSpan="2" TextWrapping="Wrap">
                 Source Code
         </TextBlock>
 
-        <TextBox x:Name="TextBoxSourceCode" Foreground="DodgerBlue" FontFamily="Cascadia Code" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" AcceptsReturn="True" VerticalContentAlignment="Top" MinLines="5">
+        <TextBox x:Name="TextBoxSourceCode" Foreground="DodgerBlue" FontFamily="Cascadia Code" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" AcceptsReturn="True" VerticalContentAlignment="Top" MinLines="8">
             
         </TextBox>
 
@@ -76,7 +76,7 @@
                 Machine Code
         </TextBlock>
 
-        <TextBox x:Name="TextBoxMachineCode" IsReadOnly="True" Foreground="DodgerBlue" FontFamily="Cascadia Code" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" AcceptsReturn="True" VerticalContentAlignment="Top" MinLines="5"></TextBox>
+        <TextBox x:Name="TextBoxMachineCode" IsReadOnly="True" Foreground="DodgerBlue" FontFamily="Cascadia Code" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" AcceptsReturn="True" VerticalContentAlignment="Top" MinLines="3"></TextBox>
 
         <TextBlock VerticalAlignment="Center" Foreground="Silver" TextAlignment="Left" Grid.Row="6" Grid.Column="0">
             Powered by Keystone - The Ultimate Assembler

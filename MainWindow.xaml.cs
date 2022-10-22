@@ -30,7 +30,7 @@ namespace Keystone_Asm_GUI
 
             Process process = new()
             {
-                StartInfo = CreateProcessStartInfo(toolPath, arguments)
+                StartInfo = CreateProcessStartInfo(toolPath, arguments.Replace(":", string.Empty))
             };
             process.Start();
 
